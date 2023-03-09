@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68667F11-A9BB-488E-B035-580E6EC95247}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FRS.Lib</RootNamespace>
+    <AssemblyName>FRS.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\UOF\bin\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib">
+      <HintPath>..\..\UOF22\UOF\UOF\bin\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.EIP.Organization.Util, Version=23.50.8307.28878, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UOF\UOF\Bin\Ede.Uof.EIP.Organization.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.EIP.PrivateMessage">
+      <HintPath>..\UOF\UOF\Bin\Ede.Uof.EIP.PrivateMessage.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Data, Version=23.50.8307.28878, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Ede.Uof.Utility.Log, Version=23.50.8307.28878, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.WKF">
+      <HintPath>..\UOF\bin\Ede.Uof.WKF.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.WKF.Design, Version=23.50.8307.28878, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UOF\bin\Ede.Uof.WKF.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UOF\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AP\APInvoice.cs" />
+    <Compile Include="Model\AP\APGridItem.cs" />
+    <Compile Include="Model\AP\BusinessPartners.cs" />
+    <Compile Include="Model\AP\GLAccounts.cs" />
+    <Compile Include="Model\SW_PO_GRID.cs" />
+    <Compile Include="Model\SW_ACCEPT_GRID.cs" />
+    <Compile Include="Model\SW_ACCEPT_HEAD.cs" />
+    <Compile Include="Model\SW_AP_HEAD.cs" />
+    <Compile Include="Model\SW_PO_HEAD.cs" />
+    <Compile Include="Model\SW_TEST.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AP\APRepository.cs" />
+    <Compile Include="Service\ACCEPT\ACCEPTService.cs" />
+    <Compile Include="Service\ACCEPT\APFormXmlService.cs" />
+    <Compile Include="Service\ACCEPT\BaseService.cs" />
+    <Compile Include="Service\AP\APService.cs" />
+    <Compile Include="Service\BaseService.cs" />
+    <Compile Include="Service\PO\ACCEPTFormXmlService.cs" />
+    <Compile Include="Service\PO\BaseService.cs" />
+    <Compile Include="Service\PO\POService.cs" />
+    <Compile Include="Service\REQ\AutoNbrREQ.cs" />
+    <Compile Include="Service\REQ\BaseService.cs" />
+    <Compile Include="Service\REQ\POFormXmlService.cs" />
+    <Compile Include="Service\REQ\REQService.cs" />
+    <Compile Include="Trigger\ACCEPT\EndFormTrigger.cs" />
+    <Compile Include="Trigger\ACCEPT\OnFlowTrigger.cs" />
+    <Compile Include="Trigger\AP\EndFormTrigger.cs" />
+    <Compile Include="Trigger\AP\RecoveryTrigger.cs" />
+    <Compile Include="Trigger\PO\EndFormTrigger.cs" />
+    <Compile Include="Trigger\REQ\EndFormTrigger.cs" />
+    <Compile Include="Utils\UIUtils.cs" />
+    <Compile Include="Utils\XmlUtils.cs" />
+    <Compile Include="WS\AP_WS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS\ACCEPT_WS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS\PO_WS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS\REQ_WS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Task\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
